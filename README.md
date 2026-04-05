@@ -3,7 +3,7 @@
 [Live Demo](YOUR_LIVE_DEMO_LINK)
 
 ## Overview
-AI SaaS Content Generator ایک modern ویب اپلیکیشن ہے جو artificial intelligence کی مدد سے high-quality content generate کرتی ہے۔ یہ tool content writers، marketers اور SaaS startups کے لیے perfect ہے۔
+AI SaaS Content Generator  modern artificial intelligence  high-quality content generate  tool content writers، marketers SaaS startups  perfect
 
 ## Features
 - AI-based content generation in seconds
