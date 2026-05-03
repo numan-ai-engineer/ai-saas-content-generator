@@ -1,29 +1,30 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
+import { useState } from "react";
 
-dotenv.config();
+function App() {
+  const [text, setText] = useState("");
+  const [result, setResult] = useState("");
 
-const app = express();
+  const handleClick = () => {
+    setResult(text);
+  };
 
-// middleware
-app.use(cors());
-app.use(express.json());
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>AI SaaS Platform</h1>
 
-// routes
-const authRoutes = require("./routes/auth");
+      <input
+        placeholder="Enter text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
 
-// use routes
-app.use("/api/auth", authRoutes);
+      <br /><br />
 
-// test route
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
+      <button onClick={handleClick}>Show Text</button>
 
-// server
-const PORT = process.env.PORT || 5000;
+      <h3>{result}</h3>
+    </div>
+  );
+}
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default App;
