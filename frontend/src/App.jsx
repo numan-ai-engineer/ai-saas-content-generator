@@ -18,6 +18,13 @@ import Login from "./pages/Login";
 function App() {
   const [user, setUser] = useState(null);
   const [page, setPage] = useState("home");
+  import Landing from "./pages/Landing";
+
+function App() {
+  return <Landing />;
+}
+
+export default App;
 
   return (
     <div className="flex h-screen">

@@ -8,6 +8,11 @@ AI کی مدد سے high-quality content generate کرنے دیتا ہے۔
 - User-friendly interface
 - Save and download generated content
 
+## ✨ Improvements (Latest Update)
+
+- Fixed component naming issue (Landing.jsx)
+- Cleaned project folder structure
+- Improved readability and organization
 ## 🧰 Tech Stack
 - Frontend: React.js, Tailwind CSS
 - Backend: Node.js, Express
