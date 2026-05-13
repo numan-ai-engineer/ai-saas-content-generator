@@ -1,7 +1,13 @@
 # AI SaaS Content Generator
+# 🚀 AI SaaS Project
 
-🚀 AI SaaS Content Generator ایک *full-stack project* ہے جو users کو 
-AI کی مدد سے high-quality content generate کرنے دیتا ہے۔
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Backend](https://img.shields.io/badge/backend-nodejs-green)
+![Frontend](https://img.shields.io/badge/frontend-react-blue)
+![Database](https://img.shields.io/badge/database-mongodb-darkgreen)
+
+🚀 AI SaaS Content Generator  *full-stack project* users 
+AI high-quality content genera 
 
 ## 🌟 Features
 - AI based content generation
