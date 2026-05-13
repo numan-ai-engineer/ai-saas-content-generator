@@ -1,15 +1,17 @@
-import axios from "axios";
+const BASE_URL = "http://localhost:5000";
 
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
-});
-
-export const testBackend = async () => {
+export const loginUser = async (data) => {
   try {
-    const res = await API.get("/");
-    return res.data;
+    const res = await fetch(`${BASE_URL}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    return await res.json();
   } catch (error) {
-    console.error("Backend Error:", error);
-    return "Error connecting to backend!";
+    return { success: false, message: "Server error ❌" };
   }
 };

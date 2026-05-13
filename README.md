@@ -14,6 +14,13 @@ AI high-quality content genera
 - User-friendly interface
 - Save and download generated content
 
+## 🔐 Login Feature Added
+
+- User login with email & password  
+- Backend validation  
+- Error handling  
+- Frontend API integration  
+
 ## ✨ Improvements (Latest Update)
 
 - Fixed component naming issue (Landing.jsx)
