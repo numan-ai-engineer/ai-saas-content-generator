@@ -37,7 +37,6 @@ cd frontend
 npm install
 npm start
 
-
 ## 🔗 Live Demo
 🔗 https://ai-saas-content-generator-nine.vercel.app
 
