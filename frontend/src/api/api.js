@@ -12,6 +12,9 @@ export const loginUser = async (data) => {
 
     return await res.json();
   } catch (error) {
-    return { success: false, message: "Server error ❌" };
+    return {
+      success: false,
+      message: "Server error"
+    };
   }
 };
