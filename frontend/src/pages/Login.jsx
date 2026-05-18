@@ -1,51 +1,90 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { loginUser } from "../api/api";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
 
-  const handleLogin = async () => {
-    setLoading(true);
-    setMessage("");
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
-    const res = await loginUser({ email, password });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    if (res.success) {
-      setMessage("✅ " + res.message);
-    } else {
-      setMessage("❌ " + res.message);
-    }
+    const result = await loginUser(formData);
 
-    setLoading(false);
+    alert(result.message);
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Login Page</h2>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "80vh"
+      }}
+    >
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          width: "300px",
+          padding: "30px",
+          border: "1px solid #ddd",
+          borderRadius: "10px",
+          boxShadow: "0px 0px 10px rgba(0,0,0,0.1)"
+        }}
+      >
+        <h2 style={{ textAlign: "center" }}>Login</h2>
 
-      <input
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br /><br />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginBottom: "15px"
+          }}
+        />
 
-      <input
-        placeholder="Password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginBottom: "15px"
+          }}
+        />
 
-      <button onClick={handleLogin} disabled={loading}>
-        {loading ? "Logging in..." : "Login"}
-      </button>
-
-      <p>{message}</p>
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            padding: "10px",
+            backgroundColor: "black",
+            color: "white",
+            border: "none",
+            cursor: "pointer"
+          }}
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
 }
