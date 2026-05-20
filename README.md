@@ -1,14 +1,13 @@
-# AI SaaS Content Generator
-# 🚀 AI SaaS Project
+# 🚀 AI SaaS Content Generator *full-stack project* users
 
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Backend](https://img.shields.io/badge/backend-nodejs-green)
-![Frontend](https://img.shields.io/badge/frontend-react-blue)
-![Database](https://img.shields.io/badge/database-mongodb-darkgreen)
+![Node.js](https://img.shields.io/badge/Node.js-18-green)
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![Express](https://img.shields.io/badge/Express-Backend-black)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-🚀 AI SaaS Content Generator  *full-stack project* users 
 
-AI high-quality content genera 
+AI high-quality content generator
 
 ## 🌟 Features
 - AI based content generation
