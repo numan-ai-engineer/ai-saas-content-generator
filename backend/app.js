@@ -1,19 +1,25 @@
-const express = require("express");
-const cors = require("cors");
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const app = express();
+import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Footer from "./components/Footer";
 
-app.use(cors());
-app.use(express.json());
+function App() {
+  return (
+    <Router>
+      <Navbar />
 
-const authRoutes = require("./routes/auth");
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
 
-app.use("/api/auth", authRoutes);
+      <Footer />
+    </Router>
+  );
+}
 
-app.get("/", (req, res) => {
-  res.send("Server running 🚀");
-});
-
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+export default App;

@@ -8,6 +8,13 @@
 
 
 AI high-quality content generator
+## ✅ Features
+
+- User Authentication
+- Protected Backend Routes
+- Modern React Frontend
+- Health Status API
+- GitHub Protected Workflow
 
 ## 🌟 Features
 - AI based content generation
