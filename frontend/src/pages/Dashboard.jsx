@@ -1,19 +1,69 @@
 import React from "react";
 
-export default function Dashboard() {
+function Dashboard() {
+  const user = {
+    name: "Waqar Ali",
+    email: "waqar@example.com",
+    country: "Pakistan",
+    status: "Active",
+    joined: "May 2026",
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center text-purple-700 drop-shadow-md">
-        Welcome to AI SaaS Dashboard
+    <div
+      style={{
+        maxWidth: "700px",
+        margin: "50px auto",
+        padding: "30px",
+      }}
+    >
+      <h1 style={{ textAlign: "center" }}>
+        🚀 User Dashboard
       </h1>
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-tr from-purple-400 to-pink-400 p-6 rounded-2xl shadow-xl hover:scale-105 transform transition text-white font-semibold">
-          User History
-        </div>
-        <div className="bg-gradient-to-tr from-yellow-400 to-green-400 p-6 rounded-2xl shadow-xl hover:scale-105 transform transition text-white font-semibold">
-          Credits & Stats
-        </div>
+
+      <div
+        style={{
+          background: "#fff",
+          padding: "30px",
+          borderRadius: "15px",
+          boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+          marginTop: "30px",
+        }}
+      >
+        <h2>{user.name}</h2>
+
+        <p>
+          <strong>Email:</strong> {user.email}
+        </p>
+
+        <p>
+          <strong>Country:</strong> {user.country}
+        </p>
+
+        <p>
+          <strong>Status:</strong> {user.status}
+        </p>
+
+        <p>
+          <strong>Joined:</strong> {user.joined}
+        </p>
+
+        <button
+          style={{
+            marginTop: "20px",
+            padding: "12px 20px",
+            background: "#2563eb",
+            color: "#fff",
+            border: "none",
+            borderRadius: "10px",
+            cursor: "pointer",
+          }}
+        >
+          Edit Profile
+        </button>
       </div>
     </div>
   );
 }
+
+export default Dashboard;

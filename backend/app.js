@@ -1,31 +1,25 @@
-// Main App Routing Component
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const app = express();
+import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Footer from "./components/Footer";
 
-// middleware
-app.use(cors());
-app.use(express.json());
+function App() {
+  return (
+    <Router>
+      <Navbar />
 
-// MongoDB connect
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected ✅"))
-  .catch((err) => console.log(err));
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
 
-// routes
-const authRoutes = require("./routes/auth");
-app.use("/api/auth", authRoutes);
+      <Footer />
+    </Router>
+  );
+}
 
-// test route
-app.get("/", (req, res) => {
-  res.send("Backend running 🚀");
-});
-
-// server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default App;
